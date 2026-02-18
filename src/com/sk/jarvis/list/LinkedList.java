@@ -145,7 +145,9 @@ public class LinkedList<T> implements IList<T>{
 
         @Override
         public T next() {
-            return current.getNext().getData();
+            T result = current.getData();
+            current = current.getNext();
+            return result;
         }
     }
 
