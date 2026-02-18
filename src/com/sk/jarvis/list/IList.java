@@ -12,7 +12,7 @@ public interface IList<T> extends Iterable<T>{
     public void removeAtBeginning();
     public T get(int index);
     public int getSize();
-    public void addAll(IList<? extends T> list);
+    public void addAll(IList<T> list);
     public boolean isEmpty();
     public boolean contains(T element);
     public Node<T> get();

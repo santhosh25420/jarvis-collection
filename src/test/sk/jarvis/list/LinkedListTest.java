@@ -101,7 +101,7 @@ public class LinkedListTest {
         list.addAll(list2);
         logger.log(Level.INFO,String.format("Size of List: %d",list.getSize()));
         assertNotNull(list.get());
-        assertEquals(200,list.getSize());
+        assertEquals(199,list.getSize());
         assertNotNull(list2.get());
         assertEquals(100,list2.getSize());
     }

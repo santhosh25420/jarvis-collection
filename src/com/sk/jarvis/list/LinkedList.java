@@ -94,9 +94,13 @@ public class LinkedList<T> implements IList<T>{
     }
 
     @Override
-    public void addAll(IList<? extends T> list) {
-        for(T element: list){
-            this.add(element);
+    public void addAll(IList<T> list) {
+        Node<T> last = getLast();
+        Node<T> temp = list.get();
+        while(temp.getNext()!=null){
+            last.setNext(temp);
+            last = last.getNext();
+            temp = temp.getNext();
             this.size++;
         }
     }
@@ -143,5 +147,13 @@ public class LinkedList<T> implements IList<T>{
         public T next() {
             return current.getNext().getData();
         }
+    }
+
+    private Node<T> getLast(){
+        Node<T> temp = this.head;
+        while(temp.getNext()!=null){
+            temp = temp.getNext();
+        }
+        return temp;
     }
 }
