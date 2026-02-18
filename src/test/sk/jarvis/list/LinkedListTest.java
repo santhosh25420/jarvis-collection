@@ -115,6 +115,13 @@ public class LinkedListTest {
         assertFalse(integerIList.contains(100));
     }
 
+    @Test
+    public void testForEach(){
+        IList<Integer> integerIList = new LinkedList<>();
+        addToList(integerIList);
+        integerIList.forEach(System.out::println);
+    }
+
     private Node<Integer> getLast(IList<Integer> integerIList){
         Node<Integer> current = integerIList.get();
         while(current.getNext()!=null){
